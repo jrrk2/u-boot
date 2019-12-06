@@ -4,6 +4,8 @@
  * Written by Simon Glass <sjg@chromium.org>
  */
 
+#define DEBUG
+
 #include <common.h>
 #include <blk.h>
 #include <dm.h>
@@ -119,7 +121,7 @@ struct blk_desc *blk_get_devnum_by_typename(const char *if_typename, int devnum)
 		if (device_get_uclass_id(dev->parent) != uclass_id) {
 			debug("%s: parent uclass %d, this dev %d\n", __func__,
 			      device_get_uclass_id(dev->parent), uclass_id);
-			continue;
+                        //			continue;
 		}
 
 		if (device_probe(dev))
