@@ -175,13 +175,12 @@ err:
 
 int pitonsd_dev_probe(struct udevice *dev)
 {
-        static int devnum;
 	struct pitonsd_block_dev *pitonsd_dev = dev_get_platdata(dev);
         struct blk_desc *block_dev = dev_get_uclass_platdata(dev);
 	int ret = 0;
         printf("pitonsd_dev_probe(%p);\n", dev);
         block_dev->if_type = IF_TYPE_MMC;
-        block_dev->devnum = ++devnum;
+        block_dev->devnum = 0;
         block_dev->bdev = dev;
         block_dev->blksz = 512;
         block_dev->sig_type = SIG_TYPE_MBR;

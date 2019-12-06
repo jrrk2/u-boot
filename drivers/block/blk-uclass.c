@@ -4,7 +4,7 @@
  * Written by Simon Glass <sjg@chromium.org>
  */
 
-#define DEBUG
+// #define DEBUG
 
 #include <common.h>
 #include <blk.h>
