@@ -1,0 +1,6 @@
+Lowrisc NEXYS4DDR BOARD
+M:	Jonathan Kimmitt <jrrk2@cam.ac.uk>
+S:      Experimental
+F:	board/lowrisc/nexys4ddr/
+F:	include/configs/lowrisc-nexys4ddr.h
+F:	configs/lowrisc_nexys4ddr_defconfig

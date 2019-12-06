@@ -12,6 +12,7 @@
 /* Implement the API required by RISC-V timer driver */
 int riscv_get_time(u64 *time)
 {
+#if 0
 #ifdef CONFIG_64BIT
 	u64 n;
 
@@ -33,6 +34,9 @@ int riscv_get_time(u64 *time)
 
 	*time = ((u64)hi << 32) | lo;
 #endif
-
+#else
+        static u64 t;
+        *time = t++; // a temporary bodge
+#endif        
 	return 0;
 }
