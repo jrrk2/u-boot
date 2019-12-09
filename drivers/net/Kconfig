@@ -455,6 +455,12 @@ config PIC32_ETH
 	  This driver implements 10/100 Mbps Ethernet and MAC layer for
 	  Microchip PIC32 microcontrollers.
 
+config LOWRISC_ETH100BASET
+	depends on DM_ETH && RISCV
+	bool "LowRISC Ethernet (100BaseT)"
+	help
+	  This MAC is present in Digilent Nexys4DDR boards
+
 config GMAC_ROCKCHIP
 	bool "Rockchip Synopsys Designware Ethernet MAC"
 	depends on DM_ETH && ETH_DESIGNWARE
