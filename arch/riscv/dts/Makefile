@@ -12,6 +12,6 @@ dtbs: $(addprefix $(obj)/, $(dtb-y))
 	@:
 
 $(obj)/lowrisc_nexys4ddr.dts.dtb:
-	sed -e "s/VENDOR/sifive/" -e "s/CPU/rocket/" -e "s/MEMSIZE/0x8000000/" -e "s/BOARD/nexys4_ddr/" -e "s/ns16750/ns16550a/" $(obj)/generic.dts | dtc -I dts -O dtb -o $@
+	sed -e "s/VENDOR/sifive/" -e "s/CPU/rocket/" -e "s/MEMSIZE/0x7E00000/" -e "s/BOARD/nexys4_ddr/" -e "s/ns16750/ns16550a/" $(obj)/generic.dts | dtc -I dts -O dtb -o $@
 
 clean-files := *.dtb

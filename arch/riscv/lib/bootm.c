@@ -6,6 +6,8 @@
  * Rick Chen, Andes Technology Corporation <rick@andestech.com>
  */
 
+#define DEBUG
+
 #include <common.h>
 #include <command.h>
 #include <dm.h>
@@ -103,7 +105,11 @@ static void boot_jump_linux(bootm_headers_t *images, int flag)
 			if (ret)
 				hang();
 #endif
-			kernel(gd->arch.boot_hart, images->ft_addr);
+                        printf("This is where we transfer control to Linux(len=%ld)\n", images->os.image_len);
+                        memset(((uint8_t *)(images->ep))+images->os.image_len, 0, images->os.image_len); /* clear after image */
+                        asm("ebreak");
+                        
+			kernel(gd->arch.boot_hart, (void *)0x40006670 /*images->ft_addr*/);
 		}
 	}
 }
