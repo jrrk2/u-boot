@@ -15,39 +15,27 @@
                        data = /incbin/("startup.cmd");
                        type = "script";
                        compression = "none";
-		       hash-1 {
-				algo = "crc32";
-			      };
+		       hash-1 {	algo = "sha1"; };
                         };
 		kernel {
                         description = "Linux kernel";
-                        data = /incbin/("../lowrisc-chip-ariane-v0.7/linux-5.3.8-lowrisc/arch/riscv/boot/Image");
+                        data = /incbin/("../../../../riscv-pk/build/bbl.bin");
 			type = "kernel";
 			arch = "riscv";
 			os = "linux";
 			compression = "none";
-			load = <0x80200000>;
-			entry = <0x80200000>;
-			hash-1 {
-				algo = "crc32";
-			};
-			hash-2 {
-				algo = "sha1";
-			};
+			load = <0x80000000>;
+			entry = <0x80000000>;
+			hash-1 { algo = "sha1"; };
 		};
 		fdt-1 {
 			description = "Flattened Device Tree blob";
-                        data = /incbin/("../lowrisc-chip-ariane-v0.7/fpga/src/etherboot/nexys4_ddr_rocket.dtb");
+                        data = /incbin/("../../../../fpga/src/etherboot/nexys4_ddr_rocket.dtb");
 			type = "flat_dt";
 			arch = "riscv";
                         load = <0x87000000>;
 			compression = "none";
-			hash-1 {
-				algo = "crc32";
-			};
-			hash-2 {
-				algo = "sha1";
-			};
+			hash-1 { algo = "sha1"; };
 		};
 	};
 
