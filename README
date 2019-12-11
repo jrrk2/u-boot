@@ -3,6 +3,18 @@
 # (C) Copyright 2000 - 2013
 # Wolfgang Denk, DENX Software Engineering, wd@denx.de.
 
+U-Boot lowrisc edition. Based on the RISCV support, with the addition
+of support for Nexys4DDR, LowRISC Ethernet and SD-Card peripherals.
+
+QUICKSTART (assuming Kernel already built):
+
+make lowrisc_nexys4ddr_defconfig
+make CROSS_COMPILE=/opt/riscv/bin/riscv64-unknown-linux-gnu- -j 4
+tools/mkimage -f arch/riscv/dts/startup.its /var/lib/tftpboot/boot.scr
+
+The DHCP startup assumes you have full control of the DHCP server, an unlikely
+scenario unless you connect the Ethernet port directly to a PC.
+
 Summary:
 ========
 
