@@ -26,6 +26,7 @@ obj-$(CONFIG_RTC_FTRTC010) += ftrtc010.o
 obj-$(CONFIG_SANDBOX) += i2c_rtc_emul.o
 obj-$(CONFIG_RTC_IMXDI) += imxdi.o
 obj-$(CONFIG_RTC_ISL1208) += isl1208.o
+obj-$(CONFIG_RTC_LOWRISC) += lowrisc_rtc.o
 obj-$(CONFIG_RTC_M41T11) += m41t11.o
 obj-$(CONFIG_RTC_M41T60) += m41t60.o
 obj-$(CONFIG_RTC_M41T62) += m41t62.o

@@ -15,6 +15,15 @@ tools/mkimage -f arch/riscv/dts/startup.its /var/lib/tftpboot/boot.scr
 The DHCP startup assumes you have full control of the DHCP server, an unlikely
 scenario unless you connect the Ethernet port directly to a PC.
 
+A sample script that just sets the clock from the network:
+
+tools/mkimage -f arch/riscv/dts/clock.its /var/lib/tftpboot/clock
+
+at the u-boot prompt:
+
+dhcp /var/lib/tftpboot/clock
+source
+
 Summary:
 ========
 

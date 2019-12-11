@@ -1,0 +1,28 @@
+/*
+ * Simple U-Boot uImage source file containing a single kernel and FDT blob
+ */
+
+/dts-v1/;
+
+/ {
+        description = "U-Boot fitImage for LowRISC clock setting";
+	#address-cells = <1>;
+
+	images {
+		default = "script";
+                script {
+                       description = "script";
+                       data = /incbin/("clock.cmd");
+                       type = "script";
+                       compression = "none";
+		       hash-1 {	algo = "sha1"; };
+                       };
+	};
+
+	configurations {
+		default = "conf-1";
+		conf-1 {
+			description = "Set clock from DHCP";
+		};
+	};
+};
