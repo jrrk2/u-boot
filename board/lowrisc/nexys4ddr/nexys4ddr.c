@@ -16,7 +16,15 @@
 
 int board_init(void)
 {
-  /* For now nothing to do here. */
+  struct udevice *dev;
+
+  for (uclass_first_device_check(UCLASS_SPI, &dev); dev;
+       uclass_next_device_check(&dev)) {
+    printf("Scanning SPI %s...\n", dev->name);
+  }
+  
+  printf("u-boot relocated to %lX\n", gd->relocaddr);
+  
   return 0;
 }
 

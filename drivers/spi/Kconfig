@@ -148,6 +148,13 @@ config ICH_SPI
 	  access the SPI NOR flash on platforms embedding this Intel
 	  ICH IP core.
 
+config LOWRISC_SPI
+	bool "LOWRISC QSPI driver"
+	imply SPI_FLASH_BAR
+	help
+	  Enable the LowRISC Xilinx SPI driver. This driver can be used to
+	  access the Xilinx QSPI flash on FPGA platforms.
+
 config MESON_SPIFC
 	bool "Amlogic Meson SPI Flash Controller driver"
 	depends on ARCH_MESON

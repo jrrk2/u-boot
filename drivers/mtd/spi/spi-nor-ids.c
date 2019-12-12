@@ -181,6 +181,8 @@ const struct flash_info spi_nor_ids[] = {
 	{ INFO("mt35xu02g",  0x2c5b1c, 0, 128 * 1024,  2048, USE_FSR | SPI_NOR_4B_OPCODES) },
 #endif
 #ifdef CONFIG_SPI_FLASH_SPANSION	/* SPANSION */
+        /* hack for lowrisc */
+	{ INFO("s25fl128s",  0x018030, 0, 64 * 1024, 256, SPI_NOR_4B_OPCODES) },
 	/* Spansion/Cypress -- single (large) sector size only, at least
 	 * for the chips listed here (without boot sectors).
 	 */

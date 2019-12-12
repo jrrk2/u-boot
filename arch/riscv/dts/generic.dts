@@ -92,6 +92,10 @@
                   compatible = "lowrisc-rtc";
                   reg = <0x44000000 0x1000>;
                 };
+                qspi: lowrisc-qspi@44000000 {
+                  compatible = "lowrisc-qspi";
+                  reg = <0x44000000 0x1000>;
+                };
                 bt: lowrisc-bt@46000000 {
                         compatible = "ns16750";
                         reg = <0x46000000 0x1000>;
